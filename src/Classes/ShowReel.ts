@@ -4,12 +4,13 @@ export default class ShowReel {
     Clips: Clip[];
     Standard: string;
     Definition: string;
-    Total
+    Total: String;
 
     constructor(standard = "PAL", definition = "SD") {
         this.Clips = [];
         this.Standard = standard;
         this.Definition = definition;
+        this.Total = "00:00:00:00";
     }
 
     AddClip = (clip: Clip): Clip[] | null => {

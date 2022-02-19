@@ -1,15 +1,18 @@
+import { Card, Divider, List } from "antd";
 import "./App.css";
-import Timecode from "./Classes/Timecode";
 import ShowReelComponent from "./Components/ShowReelComponent";
 
 const App = () => {
-	const timecode = new Timecode();
-	console.log("TimeCode: ", timecode.Duration);
-
 	return (
-		<div className="App">
+		<div>
 			<h1>Show Reels</h1>
-			<ShowReelComponent />
+			<ShowReelComponent standard={"PAL"} definition={"HD"} />
+			<Divider></Divider>
+			<ShowReelComponent standard={"NTSC"} definition={"HD"} />
+			<Divider></Divider>
+			<ShowReelComponent standard={"PAL"} definition={"SD"} />
+			<Divider></Divider>
+			<ShowReelComponent standard={"NTSC"} definition={"SD"} />
 		</div>
 	);
 };

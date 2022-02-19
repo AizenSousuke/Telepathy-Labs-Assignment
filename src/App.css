@@ -1,5 +1,27 @@
-.App {
-    text-align: center;
-    flex: 1;
-    flex-direction: row;
+@import "~antd/dist/antd.css";
+
+.showreel {
+	flex: 1;
+	flex-direction: row;
+	margin: 2em;
+}
+
+.showreel-item {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	background: grey;
+	border: 0.25em solid black;
+	min-height: 200px;
+}
+
+.card {
+	margin-bottom: 1em;
+}
+
+.clip {
+	margin: 10px;
+}
+
+.tag {
+	font-size: large;
 }

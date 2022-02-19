@@ -47,4 +47,12 @@ describe("Timecode", () => {
         expect(timecode.Duration).toEqual("00:00:10:20");
         expect(Timecode.TimeCodeToFrame(timecode.Duration, 30)).toEqual(320);
     });
+
+    test('should add and minus timecode correctly', () => {     
+        const add = Timecode.AddTimecode("00:00:00:12", "00:00:00:13", 25);
+        const minus = Timecode.MinusTimecode("00:00:01:00", "00:00:00:20", 25);
+
+        expect(add).toEqual("00:00:01:00");
+        expect(minus).toEqual("00:00:00:05");
+    })
 })

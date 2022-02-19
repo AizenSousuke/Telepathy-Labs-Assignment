@@ -12,9 +12,17 @@ export default class Timecode {
     }
 
     calculateDuration = () => {
-        const newDuration = Timecode.FrameToTimeCode(Timecode.TimeCodeToFrame(this.End_Timecode, this.Frame) - Timecode.TimeCodeToFrame(this.Start_Timecode, this.Frame));
+        const newDuration = Timecode.MinusTimecode(this.End_Timecode, this.Start_Timecode, this.Frame);
         this.Duration = newDuration;
         return newDuration;
+    }
+
+    static AddTimecode = (timecode1: string, timecode2: string, frame: number): string => {
+        return Timecode.FrameToTimeCode(Timecode.TimeCodeToFrame(timecode1, frame) + Timecode.TimeCodeToFrame(timecode2, frame));
+    }
+
+    static MinusTimecode = (timecode1: string, timecode2: string, frame: number): string => {
+        return Timecode.FrameToTimeCode(Timecode.TimeCodeToFrame(timecode1, frame) - Timecode.TimeCodeToFrame(timecode2, frame));
     }
 
     static FrameToTimeCode = (frames: number, frame: number = 25): string => {
